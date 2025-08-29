@@ -1,10 +1,9 @@
 import React from "react";
-import styles from './HeroSection.module.css';
 
 function HeroSection() {
   return (
-    <section id="hero" className={styles.heroSection}>
-      <h1 className={styles.heroTitle}>EMOTIONAL HELPER</h1>
+    <section id="hero" className="full-screen-section">
+      <h1 className="large-title">EMOTIONAL HELPER</h1>
     </section>
   );
 }

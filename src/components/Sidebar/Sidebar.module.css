@@ -24,6 +24,7 @@
 
 .sidebarRight {
   display: flex;
+  margin-right: 60px;
 }
 
 .navLink {

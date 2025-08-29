@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import styles from "./Auth.module.css";
 
 function Auth() {
   const [email, setEmail] = useState("");
@@ -40,47 +39,47 @@ function Auth() {
   }, [isAuthenticated, navigate]);
 
   return (
-    <div className={styles.authPage}>
-      <div className={styles.authContainer}>
-        <h1 className={styles.authTitle}>SIGN IN</h1>
-        <form className={styles.authForm} onSubmit={handleSubmit}>
-          <div className={styles.formGroup}>
-            <label htmlFor="email" className={styles.formLabel}>
+    <div className="auth-page">
+      <div className="auth-container">
+        <h1 className="auth-title">SIGN IN</h1>
+        <form className="auth-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="email" className="form-label">
               EMAIL
             </label>
             <input
               type="email"
               id="email"
-              className={styles.formInput}
+              className="form-input"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="password" className={styles.formLabel}>
+          <div className="form-group">
+            <label htmlFor="password" className="form-label">
               PASSWORD
             </label>
             <input
               type="password"
               id="password"
-              className={styles.formInput}
+              className="form-input"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          {error && <div className={styles.errorMessage}>{error}</div>}
+          {error && <div className="error-message">{error}</div>}
           <button
             type="submit"
-            className={styles.authSubmitBtn}
+            className="auth-submit-btn"
             disabled={isLoading}
           >
             {isLoading ? "SIGNING IN..." : "SIGN IN"}
           </button>
         </form>
-        <div className={styles.authFooter}>
-          <Link to="/signup" className={styles.navLink}>
+        <div className="auth-footer">
+          <Link to="/signup" className="auth-nav-link">
             Don't have an account? Sign Up
           </Link>
         </div>

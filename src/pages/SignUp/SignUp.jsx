@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
-import styles from './SignUp.module.css';
 
 function SignUp() {
   const location = useLocation();
@@ -46,57 +45,57 @@ function SignUp() {
   };
 
   return (
-    <div className={styles.authPage}>
-      <div className={styles.authContainer}>
-        <h2 className={styles.authTitle}>Sign Up</h2>
-        <form onSubmit={handleSubmit} className={styles.authForm}>
-          <div className={styles.formGroup}>
-            <label htmlFor="email" className={styles.formLabel}>Email</label>
+    <div className="auth-page">
+      <div className="auth-container">
+        <h2 className="auth-title">Sign Up</h2>
+        <form onSubmit={handleSubmit} className="auth-form">
+          <div className="form-group">
+            <label htmlFor="email" className="form-label">Email</label>
             <input
               type="email"
               id="email"
-              className={styles.formInput}
+              className="form-input"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
             />
           </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="password" className={styles.formLabel}>Password</label>
+          <div className="form-group">
+            <label htmlFor="password" className="form-label">Password</label>
             <input
               type="password"
               id="password"
-              className={styles.formInput}
+              className="form-input"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
               required
             />
           </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="confirmPassword" className={styles.formLabel}>Confirm Password</label>
+          <div className="form-group">
+            <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
             <input
               type="password"
               id="confirmPassword"
-              className={styles.formInput}
+              className="form-input"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm your password"
               required
             />
           </div>
-          {error && <div className={styles.errorMessage}>{error}</div>}
+          {error && <div className="error-message">{error}</div>}
           <button 
             type="submit" 
-            className={styles.authSubmitBtn} 
+            className="auth-submit-btn" 
             disabled={isLoading}
           >
             {isLoading ? 'Creating Account...' : 'Sign Up'}
           </button>
         </form>
-        <div className={styles.authFooter}>
-          <Link to="/auth" className={styles.navLink}>
+        <div className="auth-footer">
+          <Link to="/auth" className="auth-nav-link">
             Already have an account? Sign In
           </Link>
         </div>
