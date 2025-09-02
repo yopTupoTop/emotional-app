@@ -2,7 +2,7 @@ import React from "react";
 import TrackSection from "../../components/TrackSection/TrackSection";
 import StatisticSection from "../../components/StatisticSection/StatisticSection";
 import QuickPoll from "../../components/QuickPoll/QuickPoll";
-import PieChart from "../../components/PieChart/PieChart";
+import PieChart from "../../components/PieChart/WeeklyPieChart";
 import styles from "./Track.module.css";
 
 function Track() {
