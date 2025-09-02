@@ -3,9 +3,14 @@ import TrackSection from "../../components/TrackSection/TrackSection";
 import StatisticSection from "../../components/StatisticSection/StatisticSection";
 import QuickPoll from "../../components/QuickPoll/QuickPoll";
 import PieChart from "../../components/PieChart/WeeklyPieChart";
+import { useLocation } from "react-router-dom";
 import styles from "./Track.module.css";
+import { useAuth } from "../../context/AuthContext";
 
 function Track() {
+  const location = useLocation();
+  //const userEmail = location.state?.email || "";
+  const { userEmail } = useAuth();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -20,7 +25,7 @@ function Track() {
         <TrackSection />
       </section>
       <section id="statistic">
-        <StatisticSection />
+        <StatisticSection userEmail={userEmail} />
       </section>
       <button className={styles.arrowUp} onClick={scrollToTop}>
         ↑

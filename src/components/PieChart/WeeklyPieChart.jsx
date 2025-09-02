@@ -42,6 +42,7 @@ export default function WeeklyPieChart({ userEmail }) {
     const fetchPolls = async () => {
       try {
         const polls = await getUserPolls(userEmail);
+        console.log("Загруженные опросы:", polls);
         setAvailablePolls(polls);
       } catch (err) {
         console.error("Error fetching polls:", err);
@@ -53,6 +54,9 @@ export default function WeeklyPieChart({ userEmail }) {
   }, [userEmail]);
 
   const fetchAllPollData = async () => {
+    console.log("userEmail:", userEmail);
+    console.log("availablePolls:", availablePolls);
+
     if (!userEmail || availablePolls.length === 0) {
       setLoading(false);
       return;
@@ -160,6 +164,14 @@ export default function WeeklyPieChart({ userEmail }) {
 
   return (
     <div className={styles.container}>
+      <div className={styles.refreshButtonContainer}>
+        <button
+          onClick={fetchAllPollData}
+          className={`${styles.button} ${styles.buttonRefresh}`}
+        >
+          🔄 Обновить данные
+        </button>
+      </div>
       {availablePolls.map((poll) => {
         const pollData = pollDataMap[poll];
         if (!pollData || pollData.chartData.length === 0) {

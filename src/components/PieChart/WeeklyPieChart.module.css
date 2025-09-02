@@ -69,3 +69,25 @@
   color: #0c5460;
   text-align: center;
 }
+.refreshButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.button {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonRefresh {
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.buttonRefresh:hover {
+  background-color: #0056b3;
+}

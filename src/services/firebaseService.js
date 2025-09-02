@@ -17,6 +17,16 @@ export const savePollResponse = async (
   selectedOption,
   optionText
 ) => {
+  if (!userEmail || !pollTitle || selectedOption === undefined || !optionText) {
+    console.error("Missing required fields for poll response:", {
+      userEmail,
+      pollTitle,
+      selectedOption,
+      optionText,
+    });
+    throw new Error("Missing required fields");
+  }
+
   try {
     const docRef = await addDoc(collection(db, COLLECTION_NAME), {
       userEmail,
@@ -26,7 +36,6 @@ export const savePollResponse = async (
       timestamp: Timestamp.now(),
       date: new Date().toLocaleDateString(),
     });
-
     console.log("Response saved with ID:", docRef.id);
     return docRef.id;
   } catch (error) {
