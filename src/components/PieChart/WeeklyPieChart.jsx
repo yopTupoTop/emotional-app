@@ -13,19 +13,20 @@ import {
 } from "../../services/pollService";
 import styles from "./WeeklyPieChart.module.css";
 
+// Обновленная палитра цветов с улучшенным зеленым для лучшей видимости
 const COLORS = [
   "#0088FE",
-  "#00C49F",
+  "#00ff7f", // Яркий весенний зеленый - заменен для лучшей видимости
   "#FFBB28",
   "#FF8042",
   "#8884d8",
-  "#82ca9d",
+  "#00ff41", // Кислотно-зеленый как дополнительный
   "#ffc658",
   "#ff7300",
   "#8dd1e1",
   "#d084d0",
   "#ffb347",
-  "#87d068",
+  "#7fff00", // Шартрез для максимального контраста
 ];
 
 export default function WeeklyPieChart({ userEmail }) {
@@ -177,7 +178,7 @@ export default function WeeklyPieChart({ userEmail }) {
         if (!pollData || pollData.chartData.length === 0) {
           return (
             <div key={poll} className={styles.noData}>
-              <div className={styles.noDataIcon}>📝</div>
+              <div className={styles.noDataIcon}>📊</div>
               Нет данных по опросу "{poll}" за последние 7 дней
             </div>
           );

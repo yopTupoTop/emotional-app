@@ -7,3 +7,30 @@
   text-align: center;
   padding: 40px 20px;
 }
+
+.statisticTitle {
+  font-size: 72px;
+  font-weight: 700;
+  color: #40bfbf;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилизация для WeeklyPieChart контейнера */
+.statisticSection > div:last-child {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.statisticSection > div:last-child:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(64, 191, 191, 0.2);
+  border-color: rgba(64, 191, 191, 0.4);
+}
